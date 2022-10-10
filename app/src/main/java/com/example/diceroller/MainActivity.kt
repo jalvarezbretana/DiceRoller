@@ -7,6 +7,9 @@ import android.widget.ImageView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var ballImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+        ballImage = findViewById(R.id.ball_image)
     }
 
     private fun rollDice() {
@@ -29,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.ball7
         }
 
-        val diceImage: ImageView = findViewById(R.id.dice_image)
-        diceImage.setImageResource(drawableResource)
+        ballImage.setImageResource(drawableResource)
     }
 }
